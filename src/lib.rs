@@ -2,7 +2,7 @@ mod utils;
 extern crate js_sys;
 // extern crate web_sys;
 
-extern crate rand;
+// extern crate rand;
 use std::fmt;
 use wasm_bindgen::prelude::*;
 
@@ -146,8 +146,8 @@ impl Universe {
 
         let cells = (0..width * height)
             .map(|_| {
-                // let is_alive = js_sys::Math::random() < 0.5;
-                let is_alive = rand::random::<f32>() < 0.5;
+                let is_alive = js_sys::Math::random() < 0.5;
+                // let is_alive = rand::random::<f32>() < 0.5;
                 if is_alive {
                     Cell::Alive
                 } else {
